@@ -5,12 +5,12 @@ import Balance from './Balance';
 const ParentComponent: React.FC = () => {
     
     const [transactions, setTransactions] = useState([
-        { id: 1, amount: 100, type: 'Debit', date: '2023-01-01' },
-        { id: 2, amount: 200, type: 'Credit', date: '2023-01-02' }
+        
+        { id: 1, amount: 20000, type: 'Credit', date: '2023-01-02', reason:'Opening Balance' }
     ]);
-    const [autoId,setAutoId]=useState(3);
+    const [autoId,setAutoId]=useState(2);
 
-    const addTransaction = (newTransaction: { id: number; amount: number; type: string; date: string; }) => {
+    const addTransaction = (newTransaction: { id: number; amount: number; type: string; date: string; reason:string }) => {
         newTransaction.id=autoId;
         setAutoId(autoId+1);
         setTransactions((prevTransactions) => [...prevTransactions, newTransaction]);

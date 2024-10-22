@@ -6,6 +6,7 @@ interface Transaction {
     amount: number; // The amount for the transaction
     type: string; // Type of the transaction
     date:string;
+    reason: string;
 }
 
 interface BalanceProps {
